@@ -1,40 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <style>
-    body {
-      background-color: black;
-    }
-    .box {
-      min-height: 50vmin;
-      min-width: 50vmin;
-      height: 80vmin;
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+ 
 
-      width: 80vmin;
-      max-height: 100vmin;
-      max-width: 100vmin;
-      border: 1px solid red;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .vl /* Vertical Line */ {
-      border-left: 1px solid white;
-      height: 100%;
-      position: absolute;
-    }
-    .hr /* Vertical Line */ {
-      border-top: 1px solid white;
-      width: 100%;
-      position: absolute;
-    }
-  </style>
+  <script type="text/javascript" src="code.js"></script>
+  <style></style>
   <body>
     <div class="box">
       <div class="vl" style="left: 33%;"></div>
       <div class="vl" style="left: 66%;"></div>
       <div class="hr" style="top: 33%;"></div>
       <div class="hr" style="top: 66%;"></div>
+    
+
+      <div class="grid-container">
+        <div class="k1" id="k1" onclick="clk('k1')"><img id = 'k1_img'src="o_anim.svg" class="eikona" /></div>
+        <div class="k2" id="k2" onclick="clk('k2')"><img id = 'k2_img'src="o.svg" class="eikona" /></div>
+        <div class="k3" id="k3" onclick="clk('k3')"><img id = 'k3_img'src="o.svg" class="eikona" /></div>
+        <div class="k4" id="k4" onclick="clk('k4')"><img id = 'k4_img'src="o.svg" class="eikona" /></div>
+        <div class="k5" id="k5" onclick="clk('k5')"><img id = 'k5_img'src="o.svg" class="eikona" /></div>
+        <div class="k6" id="k6" onclick="clk('k6')"><img id = 'k6_img'src="o.svg" class="eikona" /></div>
+        <div class="k7" id="k7" onclick="clk('k7')"><img id = 'k7_img'src="o.svg" class="eikona" /></div>
+        <div class="k8" id="k8" onclick="clk('k8')"><img id = 'k8_img'src="o.svg" class="eikona" /></div>
+        <div class="k9" id="k9" onclick="clk('k9')"><img id = 'k9_img'src="o.svg" class="eikona" /></div>
+      </div>
     </div>
   </body>
 </html>

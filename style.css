@@ -1,0 +1,110 @@
+body {
+  background-color: gray;
+}
+.box {
+  min-height: 50vmin;
+  min-width: 50vmin;
+  height: 80vmin;
+
+  width: 80vmin;
+  max-height: 100vmin;
+  max-width: 100vmin;
+  border: 0px solid white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.vl /* Vertical Line */ {
+  border-left: 3px solid white;
+  height: 100%;
+  position: absolute;
+}
+.hr /* Vertical Line */ {
+  border-top: 3px solid white;
+  width: 100%;
+  position: absolute;
+}
+html,
+body,
+.grid-container {
+  height: 100%;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  gap: 1%;
+  grid-template-areas: "k1 k2 k3" "k4 k5 k6" "k7 k8 k9";
+}
+
+.k1 {
+  grid-area: k1;
+  cursor: pointer;
+}
+
+.k2 {
+  grid-area: k2;
+  cursor: pointer;
+}
+
+.k3 {
+  grid-area: k3;
+  cursor: pointer;
+}
+
+.k4 {
+  grid-area: k4;
+  cursor: pointer;
+}
+
+.k5 {
+  grid-area: k5;
+  cursor: pointer;
+}
+
+.k6 {
+  grid-area: k6;
+  cursor: pointer;
+}
+
+.k7 {
+  grid-area: k7;
+  cursor: pointer;
+}
+
+.k8 {
+  grid-area: k8;
+  cursor: pointer;
+}
+
+.k9 {
+  grid-area: k9;
+  cursor: pointer;
+}
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  border: 0px solid red;
+  position: relative;
+}
+
+.grid-container *:after {
+  content: attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eikona {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  visibility: hidden;
+
+  
+
+}

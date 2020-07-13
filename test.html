@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.5/vivus.js"></script>
+  
+  <body>
+    <button onclick="myFunction()">Click me</button>
+    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" id='my-svg'>
+        <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+        <g>
+         <title>Layer 1</title>
+         <ellipse stroke="#ffffff" ry="46.491229" rx="46.491229" id="svg_2" cy="50.00000" cx="50.000002" stroke-width="3" fill="none"/>
+        </g>
+       </svg>  </body>
+  <script>
+  
+  x = 1;
+  function myFunction() {
+    const myVivus = new Vivus('my-svg',{type:'oneByOne',duration:50,});
+
+    if (x==1){
+        //document.getElementById('my-svg').style.visibility='hidden';
+        myVivus.play();
+        x= 0;
+    }
+    else if (x==0) {
+        //document.getElementById('my-svg').style.visibility='visible';
+        console.log(myVivus.getStatus);
+        
+        myVivus.stop().play();
+        
+        
+        x= 1;
+        
+    }
+  
+}
+function tpt() {
+    
+}
+  
+</script>
+</html>

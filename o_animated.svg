@@ -1,0 +1,14 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" style="" class="">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <path fill="none" id="canvas_background" height="102" width="102" d="M-1 -1 L101 -1 L101 101 L-1 101 Z" class="TPYOxKyC_0"></path>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <path fill="url(#gridpattern)" stroke-width="0" height="100%" width="100%" d="M0 0 L100 0 L100 100 L0 100 Z" class="TPYOxKyC_1"></path>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path stroke="#ffffff" id="svg_2" stroke-width="3" fill="none" d="M3.508773000000005,50.000001A46.491229,46.491229 0,1,1 96.491231,50.000001A46.491229,46.491229 0,1,1 3.508773000000005,50.000001" class="TPYOxKyC_2"></path>
+ </g>
+<style data-made-with="vivus-instant">.TPYOxKyC_0{stroke-dasharray:408 410;stroke-dashoffset:409;}.start .TPYOxKyC_0{animation:TPYOxKyC_draw 400ms linear 0ms forwards;}.TPYOxKyC_1{stroke-dasharray:400 402;stroke-dashoffset:401;}.start .TPYOxKyC_1{animation:TPYOxKyC_draw 400ms linear 0ms forwards;}.TPYOxKyC_2{stroke-dasharray:293 295;stroke-dashoffset:294;}.start .TPYOxKyC_2{animation:TPYOxKyC_draw 400ms linear 0ms forwards;}@keyframes TPYOxKyC_draw{100%{stroke-dashoffset:0;}}@keyframes TPYOxKyC_fade{0%{stroke-opacity:1;}91.30434782608695%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style></svg>
