@@ -11,15 +11,17 @@
 
 <body></body>
 <script>
-  const peer = new Peer('azza');
+  const peer = new Peer('azza24');
 
   peer.on('open', function (id) {
     alert('My peer ID is: ' + id);
   });
 
-  const conn = peer.connect('azza24');
-conn.on('open', () => {
-  conn.send('hi!');
+  peer.on('connection', (conn) => {
+  conn.on('data', (data) => {
+    alert(data);
+  });
+  
 });
 
 
