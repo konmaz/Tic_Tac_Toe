@@ -1,27 +1,26 @@
 body {
-  background-color: gray;
+  background-color: #14bdac;
 }
 .box {
-  min-height: 50vmin;
-  min-width: 50vmin;
-  height: 80vmin;
+  
+  height: 70vmin;
 
-  width: 80vmin;
+  width: 70vmin;
   max-height: 100vmin;
   max-width: 100vmin;
   border: 0px solid white;
   position: fixed;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -30%);
 }
 .vl /* Vertical Line */ {
-  border-left: 3px solid white;
+  border-left: 3px solid #0da192;
   height: 100%;
   position: absolute;
 }
 .hr /* Vertical Line */ {
-  border-top: 3px solid white;
+  border-top: 3px solid #0da192;
   width: 100%;
   position: absolute;
 }
@@ -88,7 +87,7 @@ body,
 
 /* For presentation only, no need to copy the code below */
 .grid-container * {
-  border: 0px solid red;
+  
   position: relative;
 }
 
@@ -109,3 +108,15 @@ body,
   
 
 }
+.score {
+
+text-align:center;
+
+position: relative;
+font-family: monospace;
+  font-size: 150%;
+  color: red;
+
+
+}
+
