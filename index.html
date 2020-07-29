@@ -204,13 +204,27 @@
       <!-- <div class="k9" onclick="clk('k9')"><object id="m9" type="image/svg+xml" class="eikona"></object></div> -->
 
 
-    </div><br>
+    </div>
     <div class="score">
-      <table align="center" style="table-layout: auto;border-collapse: collapse;">
+      <table align="center" style="table-layout:auto; width: 80%;">
 
         <tr>
-          <td><img src='o.svg' style="width: 40%;" id='o_score'></td>
-          <td><img src='x.svg' style="width: 40%;" id='x_score'></td>
+          <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o_score'  style="height: 50%;" >
+            <!-- O -->
+            <g>
+              <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
+                fill="none" />
+            </g>
+          </svg></td>
+          <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x_score' style=" height: 50%; " >
+            <!-- X -->
+            <g>
+              <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
+                stroke-width="5" fill="none" />
+              <line y2="97.5" x2="2" y1="2.5" x1="98" fill-opacity="null" stroke-opacity="null" stroke-width="5"
+                stroke="#545454" fill="none" />
+            </g>
+          </svg></td>
         </tr>
         <tr>
           <td>0</td>
