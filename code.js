@@ -3,7 +3,10 @@ var board = [0, 0, 0,
   0, 0, 0]
 
 var player_turn = false; //false = O's begin first , true X's begin first
+
+// Just set's the opacity of the current player
 if (player_turn) {
+
   document.getElementById("o_score").style.opacity = "0.4";
 }
 else {
@@ -13,7 +16,8 @@ myVivusX_score = new Vivus("x_score", { type: 'oneByOne', duration: 50 });
 myVivusX_score.play();
 myVivusO_score = new Vivus("o_score", { type: 'oneByOne', duration: 50 });
 myVivusO_score.play();
-
+myVivus_Win_Line = new Vivus("win_line_svg", { type: 'oneByOne', duration: 30 });
+myVivus_Win_Line.play();
 
 // event player clicked on box
 function clk(box_pos) {
@@ -41,77 +45,75 @@ function clk(box_pos) {
       document.getElementById("o_score").style.opacity = "0.4";
     }
   }
-  
+  if (has_anybody_won()) {
+    reset();
+  }
 
 }
 
 //just draws the X's and O's on the board
 function draw(pos, source) {
   console.log(pos, source)
+  document.getElementById(source).style.display = 'block';
+
   switch (pos) {
 
     case 'k1':
 
       myVivus1 = new Vivus(source, { type: 'oneByOne', duration: 25 });
-      document.getElementById(source).style.visibility = 'visible';
       myVivus1.play();
       break;
 
     case 'k2':
 
       myVivus2 = new Vivus(source, { type: 'oneByOne', duration: 25 });
-      document.getElementById(source).style.visibility = 'visible';
       myVivus2.play();
       break;
 
     case 'k3':
 
       myVivus3 = new Vivus(source, { type: 'oneByOne', duration: 25 });
-      document.getElementById(source).style.visibility = 'visible';
       myVivus3.play();
       break;
 
     case 'k4':
 
       myVivus4 = new Vivus(source, { type: 'oneByOne', duration: 25 });
-      document.getElementById(source).style.visibility = 'visible';
       myVivus4.play();
       break;
+
     case 'k5':
 
 
       myVivus5 = new Vivus(source, { type: 'oneByOne', duration: 25 });
-      document.getElementById(source).style.visibility = 'visible';
       myVivus5.play();
       break;
+
     case 'k6':
 
       myVivus6 = new Vivus(source, { type: 'oneByOne', duration: 25 });
-      document.getElementById(source).style.visibility = 'visible';
       myVivus6.play();
       break;
+
     case 'k7':
 
-
       myVivus7 = new Vivus(source, { type: 'oneByOne', duration: 25 });
-      document.getElementById(source).style.visibility = 'visible';
       myVivus7.play();
       break;
+
     case 'k8':
 
 
       myVivus8 = new Vivus(source, { type: 'oneByOne', duration: 25 });
-      document.getElementById(source).style.visibility = 'visible';
       myVivus8.play();
       break;
+
     case 'k9':
 
 
       myVivus9 = new Vivus(source, { type: 'oneByOne', duration: 25 });
-      document.getElementById(source).style.visibility = 'visible';
       myVivus9.play();
       break;
-
 
     default:
       console.log("Eroor in Switch")
@@ -142,14 +144,17 @@ function has_anybody_won() {
     }
     if (a === b && b === c) {
       roundWon = true;
+      console.log('POS: ', winCondition);
       if (player_turn) {
-        alert('O has won');
+
         console.log('O has won');
+        document.getElementById('o_wins').innerHTML ++;
         return true;
       }
       else {
-        alert('X has won');
+
         console.log('X has won');
+        document.getElementById('x_wins').innerHTML ++;
         return true;
       }
 
@@ -161,6 +166,72 @@ function has_anybody_won() {
 
 
 
+// removes everything from the board
+function reset(params) {
+  for (let i = 1; i < 10; i++) {
+    document.getElementById('x' + i).style.display = 'none';
+    document.getElementById('o' + i).style.display = 'none';
+  }
+  board = [0, 0, 0,
+    0, 0, 0,
+    0, 0, 0];
+}
+
+// just draws the winer line, start and end are the number of the tile ex 0,1 ... 8.
+function draw_line(star, end) {
+  
 
 
+}
 
+function get_cords(tile)
+{
+  switch (tile) {
+    case 0: // 1st tile
+      x1 = 15;
+      y1 = 15
+      break;
+
+    case 1:
+      x1 = 50;
+      y1 = 15;
+      break;
+
+    case 2:
+      x1 = 85;
+      y1 = 15;
+      break;
+
+    case 3:
+      x1 = 15;
+      y1 = 50;
+      break;
+
+    case 4:
+      x1 = 50;
+      y1 = 50;
+      break;
+    case 5:
+      x1=85;
+      y1=50;
+      break;
+
+    case 6:
+      x1=15;
+      y1=85;
+      break;
+    case 7:
+      x1=50;
+      y1=85;
+      break;
+    case 8:
+      x1=85;
+      y1=85;
+      break;
+    default:
+      x1=50;
+      y1=50;
+      break;
+  }
+  return (x1,y1);
+}

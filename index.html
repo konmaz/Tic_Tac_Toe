@@ -10,11 +10,14 @@
 
 <body>
   <div class="box">
+    <svg style="position: absolute; z-index:-1;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='win_line_svg'>
+      <line x1="50" y1="15" x2="50" y2="80" style="stroke:rgb(255,0,0);stroke-width:2" id='line' />
+    </svg>
     <div class="vl" style="left: 33%;"></div>
     <div class="vl" style="left: 66%;"></div>
     <div class="hr" style="top: 33%;"></div>
     <div class="hr" style="top: 66%;"></div>
-
+<!-- Mx1,y1Lx2,y2 -->
 
     <div class="grid-container">
       <!-- k1 -->
@@ -227,12 +230,14 @@
           </svg></td>
         </tr>
         <tr>
-          <td>0</td>
-          <td>0</td>
+          <td id="o_wins">0</td>
+          <td id="x_wins">0</td>
 
       </table>
     </div>
   </div>
+  <button onclick="reset()">Reset</button>
+
 
 
 </body>
