@@ -3,7 +3,7 @@ var board = [0, 0, 0,
   0, 0, 0]
 
 var player_turn = false; //false = O's begin first , true X's begin first
-
+var counter = 0;
 // Just set's the opacity of the current player
 if (player_turn) {
 
@@ -16,8 +16,8 @@ myVivusX_score = new Vivus("x_score", { type: 'oneByOne', duration: 50 });
 myVivusX_score.play();
 myVivusO_score = new Vivus("o_score", { type: 'oneByOne', duration: 50 });
 myVivusO_score.play();
-myVivus_Win_Line = new Vivus("win_line_svg", { type: 'oneByOne', duration: 30 });
-myVivus_Win_Line.play();
+//myVivus_Win_Line = new Vivus("win_line_svg", { type: 'oneByOne', duration: 30 });
+//myVivus_Win_Line.play();
 
 // event player clicked on box
 function clk(box_pos) {
@@ -28,7 +28,7 @@ function clk(box_pos) {
     return;
   }
   else {
-
+    counter++;
     if (player_turn) {
       board[box_pos[1] - 1] = 'X';
       draw(box_pos, 'x' + box_pos[1]);
@@ -47,6 +47,10 @@ function clk(box_pos) {
   }
   if (has_anybody_won()) {
     reset();
+  }
+  else if(counter>9)
+  {
+    console.log("draw");
   }
 
 }
@@ -145,6 +149,7 @@ function has_anybody_won() {
     if (a === b && b === c) {
       roundWon = true;
       console.log('POS: ', winCondition);
+      draw_line(winCondition[0],winCondition[2]);
       if (player_turn) {
 
         console.log('O has won');
@@ -179,7 +184,22 @@ function reset(params) {
 
 // just draws the winer line, start and end are the number of the tile ex 0,1 ... 8.
 function draw_line(star, end) {
+  val = get_cords(star);
+  x1= val[0];
+  y1 = val[1];
+  val2 = get_cords(end);
+  x2 = val2[0];
+  y2 = val2[1];
+  //"Mx1,y1Lx2,y2"
+  console.log(x1,y1,x2,y2);
+  console.log(x2,y2);  
+  line = document.getElementById("line");
+  line.x1.baseVal.value = x1;
+  line.y1.baseVal.value = y1;
+  line.x2.baseVal.value = x2;
+  line.y2.baseVal.value = y2;
   
+
 
 
 }
@@ -233,5 +253,5 @@ function get_cords(tile)
       y1=50;
       break;
   }
-  return (x1,y1);
+  return [x1,y1];
 }
