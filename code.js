@@ -16,8 +16,10 @@ myVivusX_score = new Vivus("x_score", { type: 'oneByOne', duration: 50 });
 myVivusX_score.play();
 myVivusO_score = new Vivus("o_score", { type: 'oneByOne', duration: 50 });
 myVivusO_score.play();
-//myVivus_Win_Line = new Vivus("win_line_svg", { type: 'oneByOne', duration: 30 });
-//myVivus_Win_Line.play();
+document.getElementById("x_score").style.opacity = 1;
+document.getElementById("o_score").style.opacity = 1;
+
+
 
 // event player clicked on box
 function clk(box_pos) {
@@ -45,13 +47,7 @@ function clk(box_pos) {
       document.getElementById("o_score").style.opacity = "0.4";
     }
   }
-  if (has_anybody_won()) {
-    reset();
-  }
-  else if(counter>9)
-  {
-    console.log("draw");
-  }
+  has_anybody_won();
 
 }
 
@@ -149,17 +145,18 @@ function has_anybody_won() {
     if (a === b && b === c) {
       roundWon = true;
       console.log('POS: ', winCondition);
-      draw_line(winCondition[0],winCondition[2]);
+      draw_line(winCondition[0], winCondition[2]);
+
       if (player_turn) {
 
         console.log('O has won');
-        document.getElementById('o_wins').innerHTML ++;
+        document.getElementById('o_wins').innerHTML++;
         return true;
       }
       else {
 
         console.log('X has won');
-        document.getElementById('x_wins').innerHTML ++;
+        document.getElementById('x_wins').innerHTML++;
         return true;
       }
 
@@ -168,8 +165,6 @@ function has_anybody_won() {
   return false;
 
 }
-
-
 
 // removes everything from the board
 function reset(params) {
@@ -185,27 +180,42 @@ function reset(params) {
 // just draws the winer line, start and end are the number of the tile ex 0,1 ... 8.
 function draw_line(star, end) {
   val = get_cords(star);
-  x1= val[0];
-  y1 = val[1];
+  a = val[0];
+  b = val[1];
   val2 = get_cords(end);
-  x2 = val2[0];
-  y2 = val2[1];
+  c = val2[0];
+  d = val2[1];
   //"Mx1,y1Lx2,y2"
-  console.log(x1,y1,x2,y2);
-  console.log(x2,y2);  
+  win_line_svg = document.getElementById('win_line_svg');
   line = document.getElementById("line");
-  line.x1.baseVal.value = x1;
-  line.y1.baseVal.value = y1;
-  line.x2.baseVal.value = x2;
-  line.y2.baseVal.value = y2;
+  console.log(val, val2)
+  console.log(a, b, c, d);
+  line.x1.baseVal.value = a;
+  line.y1.baseVal.value = b;
+  line.x2.baseVal.value = c;
+  line.y2.baseVal.value = d;
+  //document.getElementById('win_line_svg').style.zIndex=1;
+  document.getElementById('win_line_svg').style.opacity = 1;
+  win_line_svg.style.zIndex = 1;
+  win_line_svg.style.opacity = 1;
+  delete win_line_svg;
+  delete line;
+  //myVivus_Win_Line.play();
+  //myVivus_Win_Line.destroy();
+  //myVivus_Win_Line = new Vivus("win_line_svg", { type: 'oneByOne', duration: 30 ,selfDestroy:true},);
   
+  setTimeout(function () { reset() }, 3000);
+  //setTimeout(function(){document.getElementById('win_line_svg').style.zIndex=-1},3000);
+  //setTimeout(function(){document.getElementById('win_line_svg').style.opacity=0},3000);
+
+
+
 
 
 
 }
 
-function get_cords(tile)
-{
+function get_cords(tile) {
   switch (tile) {
     case 0: // 1st tile
       x1 = 15;
@@ -232,26 +242,26 @@ function get_cords(tile)
       y1 = 50;
       break;
     case 5:
-      x1=85;
-      y1=50;
+      x1 = 85;
+      y1 = 50;
       break;
 
     case 6:
-      x1=15;
-      y1=85;
+      x1 = 15;
+      y1 = 85;
       break;
     case 7:
-      x1=50;
-      y1=85;
+      x1 = 50;
+      y1 = 85;
       break;
     case 8:
-      x1=85;
-      y1=85;
+      x1 = 85;
+      y1 = 85;
       break;
     default:
-      x1=50;
-      y1=50;
+      x1 = 50;
+      y1 = 50;
       break;
   }
-  return [x1,y1];
+  return [x1, y1];
 }

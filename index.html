@@ -4,21 +4,22 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Tic Tac Toe</title>
 </head>
-
-<style></style>
 
 <body>
   <div class="box">
-    <svg style="position: absolute; z-index:0;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='win_line_svg'>
-      <line x1="50" y1="15" x2="50" y2="80" style="stroke:rgb(255,0,0);stroke-width:2" id='line' />
+    <!-- win line -->
+    <svg style="position: absolute; z-index:0; opacity: 100;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+      id='win_line_svg'>
+      <line x1="50" y1="15" x2="50" y2="80" style="stroke:rgb(124, 124, 124);stroke-width:2" id='line' />
     </svg>
+    <!-- board lines -->
     <div class="vl" style="left: 33%;"></div>
     <div class="vl" style="left: 66%;"></div>
     <div class="hr" style="top: 33%;"></div>
     <div class="hr" style="top: 66%;"></div>
-<!-- Mx1,y1Lx2,y2 -->
-
+    <!-- The invisible O's and X's  -->
     <div class="grid-container">
       <!-- k1 -->
       <div class="k1" onclick="clk('k1')">
@@ -208,26 +209,30 @@
 
 
     </div>
+
+    <!-- score table -->
     <div class="score">
       <table align="center" style="table-layout:auto; width: 80%;">
 
         <tr>
-          <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o_score'  style="height: 50%;" >
-            <!-- O -->
-            <g>
-              <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
-                fill="none" />
-            </g>
-          </svg></td>
-          <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x_score' style=" height: 50%; " >
-            <!-- X -->
-            <g>
-              <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
-                stroke-width="5" fill="none" />
-              <line y2="97.5" x2="2" y1="2.5" x1="98" fill-opacity="null" stroke-opacity="null" stroke-width="5"
-                stroke="#545454" fill="none" />
-            </g>
-          </svg></td>
+          <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o_score'
+              style="height: 50%; opacity:0%; ">
+              <!-- O -->
+              <g>
+                <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
+                  fill="none" />
+              </g>
+            </svg></td>
+          <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x_score'
+              style=" height: 50%; opacity:0% ">
+              <!-- X -->
+              <g>
+                <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
+                  stroke-width="5" fill="none" />
+                <line y2="97.5" x2="2" y1="2.5" x1="98" fill-opacity="null" stroke-opacity="null" stroke-width="5"
+                  stroke="#545454" fill="none" />
+              </g>
+            </svg></td>
         </tr>
         <tr>
           <td id="o_wins">0</td>
