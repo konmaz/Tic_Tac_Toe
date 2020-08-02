@@ -145,7 +145,8 @@ function has_anybody_won() {
     if (a === b && b === c) {
       roundWon = true;
       console.log('POS: ', winCondition);
-      draw_line(winCondition[0], winCondition[2]);
+      setTimeout(function () { draw_line(winCondition[0], winCondition[2]) }, 100);
+      
 
       if (player_turn) {
 
@@ -190,23 +191,19 @@ function draw_line(star, end) {
   line = document.getElementById("line");
   console.log(val, val2)
   console.log(a, b, c, d);
-  line.x1.baseVal.value = a;
-  line.y1.baseVal.value = b;
-  line.x2.baseVal.value = c;
-  line.y2.baseVal.value = d;
-  //document.getElementById('win_line_svg').style.zIndex=1;
+  myVivus_Win_Line = new Vivus("win_line_svg", { type: 'oneByOne', duration: 30 ,selfDestroy:true},);
+  document.getElementById('line').setAttribute('d','M'+a+','+b+'L'+c+','+d+'')
+  document.getElementById('win_line_svg').style.zIndex=1;
   document.getElementById('win_line_svg').style.opacity = 1;
   win_line_svg.style.zIndex = 1;
   win_line_svg.style.opacity = 1;
-  delete win_line_svg;
-  delete line;
-  //myVivus_Win_Line.play();
-  //myVivus_Win_Line.destroy();
-  //myVivus_Win_Line = new Vivus("win_line_svg", { type: 'oneByOne', duration: 30 ,selfDestroy:true},);
+  
+  myVivus_Win_Line.play();
+
   
   setTimeout(function () { reset() }, 3000);
-  //setTimeout(function(){document.getElementById('win_line_svg').style.zIndex=-1},3000);
-  //setTimeout(function(){document.getElementById('win_line_svg').style.opacity=0},3000);
+  setTimeout(function(){document.getElementById('win_line_svg').style.zIndex=-1},3000);
+  setTimeout(function(){document.getElementById('win_line_svg').style.opacity=0},3000);
 
 
 
