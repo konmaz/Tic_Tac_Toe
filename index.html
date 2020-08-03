@@ -4,15 +4,27 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+
   <title>Tic Tac Toe</title>
 </head>
 
 <body>
+  <h1 style="font-family: 'Open Sans', sans-serif; position: absolute; top:2%; left:50%; transform: translate(-50%, -50%);">Tic Tac Toe</h1>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <p id='who_is_the_winner'>X wins</p>
+    </div>
+  
+  </div>
   <div class="box">
     <!-- win line -->
     <svg style="position: absolute; z-index:0; opacity: 0;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
       id='win_line_svg'>
-      <line x1="50" y1="15" x2="50" y2="80" style="stroke:rgb(124, 124, 124);stroke-width:2" id='line' />
+      <path style="stroke: rgb(124, 124, 124); stroke-width: 2; stroke-dasharray: 99, 101; stroke-dashoffset: 0;" id="line" d="M15,15L85,15"></path>
     </svg>
     <!-- board lines -->
     <div class="vl" style="left: 33%;"></div>

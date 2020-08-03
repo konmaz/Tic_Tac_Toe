@@ -1,9 +1,34 @@
 var board = [0, 0, 0,
   0, 0, 0,
   0, 0, 0]
-
+var counter = 0;
 var player_turn = false; //false = O's begin first , true X's begin first
 var counter = 0;
+const PAUSE_TIME = 3500;
+
+// Modal
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+window.onclick = function (event) { //when clicked outside of modal hide it and reset
+  if (event.target == modal) {
+    modal.style.display = "none";
+    reset();
+    document.getElementById('win_line_svg').style.zIndex = -1;
+    document.getElementById('win_line_svg').style.opacity = 0;
+  }
+}
+function show_modal() {
+  modal.style.display = "block";
+}
+function hide_modal() {
+  modal.style.display = "none";
+}
+function change_modal_value(value) {
+  document.getElementById('who_is_the_winner').innerHTML = value;
+}
+
+
 // Just set's the opacity of the current player
 if (player_turn) {
 
@@ -18,8 +43,6 @@ myVivusO_score = new Vivus("o_score", { type: 'oneByOne', duration: 50 });
 myVivusO_score.play();
 document.getElementById("x_score").style.opacity = 1;
 document.getElementById("o_score").style.opacity = 1;
-
-
 
 // event player clicked on box
 function clk(box_pos) {
@@ -142,11 +165,20 @@ function has_anybody_won() {
     if (a === 0 || b === 0 || c === 0) {
       continue;
     }
+
     if (a === b && b === c) {
+
       roundWon = true;
       console.log('POS: ', winCondition);
-      setTimeout(function () { draw_line(winCondition[0], winCondition[2]) }, 100);
-      
+      draw_winner_line(winCondition[0], winCondition[2])
+      if (a == 'X')
+        change_modal_value("X wins");
+      else
+        change_modal_value("O wins");
+      setTimeout(function () { show_modal() }, 500);//wait for a while before showing the modal 
+
+      setTimeout(function () { reset() }, PAUSE_TIME);
+      setTimeout(function () { hide_modal() }, PAUSE_TIME);
 
       if (player_turn) {
 
@@ -160,6 +192,13 @@ function has_anybody_won() {
         document.getElementById('x_wins').innerHTML++;
         return true;
       }
+    }
+    else if (counter == 9) {
+      change_modal_value("Draw");
+      setTimeout(function () { show_modal() }, 500);//wait for a while before showing the modal 
+
+      setTimeout(function () { reset() }, PAUSE_TIME);
+      setTimeout(function () { hide_modal() }, PAUSE_TIME);
 
     }
   }
@@ -176,40 +215,32 @@ function reset(params) {
   board = [0, 0, 0,
     0, 0, 0,
     0, 0, 0];
+  counter = 0;
 }
 
-// just draws the winer line, start and end are the number of the tile ex 0,1 ... 8.
-function draw_line(star, end) {
+// just draws the winner line and after PAUSE_TIME milliseconds hides it
+function draw_winner_line(star, end) {
   val = get_cords(star);
   a = val[0];
   b = val[1];
   val2 = get_cords(end);
   c = val2[0];
   d = val2[1];
-  //"Mx1,y1Lx2,y2"
+
   win_line_svg = document.getElementById('win_line_svg');
   line = document.getElementById("line");
-  console.log(val, val2)
-  console.log(a, b, c, d);
-  myVivus_Win_Line = new Vivus("win_line_svg", { type: 'oneByOne', duration: 30 ,selfDestroy:true},);
-  document.getElementById('line').setAttribute('d','M'+a+','+b+'L'+c+','+d+'')
-  document.getElementById('win_line_svg').style.zIndex=1;
+
+  document.getElementById('line').setAttribute('d', 'M' + a + ',' + b + 'L' + c + ',' + d + '')
+  myVivus_Win_Line = new Vivus("win_line_svg", { type: 'oneByOne', duration: 30 },);
+  document.getElementById('win_line_svg').style.zIndex = 1;
   document.getElementById('win_line_svg').style.opacity = 1;
   win_line_svg.style.zIndex = 1;
   win_line_svg.style.opacity = 1;
-  
+
   myVivus_Win_Line.play();
 
-  
-  setTimeout(function () { reset() }, 3000);
-  setTimeout(function(){document.getElementById('win_line_svg').style.zIndex=-1},3000);
-  setTimeout(function(){document.getElementById('win_line_svg').style.opacity=0},3000);
-
-
-
-
-
-
+  setTimeout(function () { document.getElementById('win_line_svg').style.zIndex = -1 }, PAUSE_TIME);
+  setTimeout(function () { document.getElementById('win_line_svg').style.opacity = 0 }, PAUSE_TIME);
 }
 
 function get_cords(tile) {
