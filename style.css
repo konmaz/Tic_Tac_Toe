@@ -1,95 +1,105 @@
 body {
-  background-color: #14bdac;
+    background-color: #14bdac;
 }
-.box {
-  
-  height: 65vmin;
 
-  width: 65vmin;
-  max-height: 100vmin;
-  max-width: 100vmin;
-  border: 0px solid white;
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -30%);
+.box {
+    height: 65vmin;
+    width: 65vmin;
+    max-height: 100vmin;
+    max-width: 100vmin;
+    border: 0px solid white;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
 }
-.vl /* Vertical Line */ {
-  border-left: 3px solid #0da192;
-  height: 100%;
-  position: absolute;
+
+.vl
+/* Vertical Line */
+
+{
+    border-left: 3px solid #0da192;
+    height: 100%;
+    position: absolute;
 }
-.hr /* Vertical Line */ {
-  border-top: 3px solid #0da192;
-  width: 100%;
-  position: absolute;
+
+.hr
+/* Vertical Line */
+
+{
+    border-top: 3px solid #0da192;
+    width: 100%;
+    position: absolute;
 }
+
 html,
 body,
 .grid-container {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
-  gap: 1%;
-  grid-template-areas: "k1 k2 k3" "k4 k5 k6" "k7 k8 k9";
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 1%;
+    grid-template-areas: "k1 k2 k3" "k4 k5 k6" "k7 k8 k9";
 }
 
 .k1 {
-  grid-area: k1;
-  cursor: pointer;
-  
+    grid-area: k1;
+    cursor: pointer;
 }
 
 .k2 {
-  grid-area: k2;
-  cursor: pointer;
+    grid-area: k2;
+    cursor: pointer;
 }
 
 .k3 {
-  grid-area: k3;
-  cursor: pointer;
+    grid-area: k3;
+    cursor: pointer;
 }
 
 .k4 {
-  grid-area: k4;
-  cursor: pointer;
+    grid-area: k4;
+    cursor: pointer;
 }
 
 .k5 {
-  grid-area: k5;
-  cursor: pointer;
+    grid-area: k5;
+    cursor: pointer;
 }
 
 .k6 {
-  grid-area: k6;
-  cursor: pointer;
+    grid-area: k6;
+    cursor: pointer;
 }
 
 .k7 {
-  grid-area: k7;
-  cursor: pointer;
+    grid-area: k7;
+    cursor: pointer;
 }
 
 .k8 {
-  grid-area: k8;
-  cursor: pointer;
+    grid-area: k8;
+    cursor: pointer;
 }
 
 .k9 {
-  grid-area: k9;
-  cursor: pointer;
+    grid-area: k9;
+    cursor: pointer;
 }
 
+
 /* For presentation only, no need to copy the code below */
+
 .grid-container * {
-  
-  position: relative;
+    position: relative;
 }
+
+
 /* 
 .grid-container *:after {
   content: attr(class);
@@ -98,68 +108,79 @@ body,
   left: 0;
 }
  */
+
 .eikona {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 80%;
-  display: none;
-
-  
-
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    display: none;
 }
+
 .score {
-
-text-align:center;
-position: relative;
-top: 5%;
-font-family: 'Open Sans', sans-serif;
-  font-size: 300%;
-  color: black;
+    text-align: center;
+    position: relative;
+    top: 5%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 5vmin;
+    color: black;
 }
+
 
 /* The Modal (background) */
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
+
 
 /* Modal Content/Box */
+
 .modal-content {
-  background-color: rgb(255 255 255 / 80%);;
-  position: absolute;
-  left: 50%;
-  top: 43%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 250%;
-  
-  border: 1px solid #888;
-  /*width: 50%; /* Could be more or less, depending on screen size */
+    background-color: rgb(255 255 255 / 80%);
+    ;
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 250%;
+    border: 1px solid #888;
+    /*width: 50%; /* Could be more or less, depending on screen size */
 }
 
+
 /* The Close Button */
+
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
-

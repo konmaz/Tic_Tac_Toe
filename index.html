@@ -2,47 +2,48 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
 
-  <title>Tic Tac Toe</title>
+    <title>Tic Tac Toe</title>
 </head>
 
 <body>
-  <h1 style="font-family: 'Open Sans', sans-serif; position: absolute; top:2%; left:50%; transform: translate(-50%, -50%);">Tic Tac Toe</h1>
-  <div id="myModal" class="modal">
+    <h1 style="font-family: 'Open Sans', sans-serif;font-size: 5vmin; position: absolute; top:2%; left:50%; transform: translate(-50%, -50%);">
+        Tic Tac Toe</h1>
+    <div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-      <p id='who_is_the_winner'>X wins</p>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p id='who_is_the_winner'>X wins</p>
+        </div>
+
     </div>
-  
-  </div>
-  <div class="box">
-    <!-- win line -->
-    <svg style="position: absolute; z-index:0; opacity: 0;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-      id='win_line_svg'>
-      <path style="stroke: rgb(124, 124, 124); stroke-width: 2; stroke-dasharray: 99, 101; stroke-dashoffset: 0;" id="line" d="M15,15L85,15"></path>
+    <div class="box">
+        <!-- win line -->
+        <svg style="position: absolute; z-index:0; opacity: 0;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='win_line_svg'>
+      <path style="stroke: rgb(124, 124, 124); stroke-width: 2; stroke-dasharray: 99, 101; stroke-dashoffset: 0;"
+        id="line" d="M15,15L85,15"></path>
     </svg>
-    <!-- board lines -->
-    <div class="vl" style="left: 33%;"></div>
-    <div class="vl" style="left: 66%;"></div>
-    <div class="hr" style="top: 33%;"></div>
-    <div class="hr" style="top: 66%;"></div>
-    <!-- The invisible O's and X's  -->
-    <div class="grid-container">
-      <!-- k1 -->
-      <div class="k1" onclick="clk('k1')">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o1' class="eikona">
+        <!-- board lines -->
+        <div class="vl" style="left: 33%;"></div>
+        <div class="vl" style="left: 66%;"></div>
+        <div class="hr" style="top: 33%;"></div>
+        <div class="hr" style="top: 66%;"></div>
+        <!-- The invisible O's and X's  -->
+        <div class="grid-container">
+            <!-- k1 -->
+            <div class="k1" onclick="clk('k1')">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o1' class="eikona">
           <!-- O -->
           <g>
             <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
               fill="none" />
           </g>
         </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x1' class="eikona">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x1' class="eikona">
           <!-- X -->
           <g>
             <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -51,18 +52,18 @@
               stroke="#545454" fill="none" />
           </g>
         </svg>
-      </div>
+            </div>
 
-      <!-- k2 -->
-      <div class="k2" onclick="clk('k2')">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o2' class="eikona">
+            <!-- k2 -->
+            <div class="k2" onclick="clk('k2')">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o2' class="eikona">
           <!-- O -->
           <g>
             <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
               fill="none" />
           </g>
         </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x2' class="eikona">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x2' class="eikona">
           <!-- X -->
           <g>
             <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -71,18 +72,18 @@
               stroke="#545454" fill="none" />
           </g>
         </svg>
-      </div>
+            </div>
 
-      <!-- k3 -->
-      <div class="k3" onclick="clk('k3')">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o3' class="eikona">
+            <!-- k3 -->
+            <div class="k3" onclick="clk('k3')">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o3' class="eikona">
           <!-- O -->
           <g>
             <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
               fill="none" />
           </g>
         </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x3' class="eikona">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x3' class="eikona">
           <!-- X -->
           <g>
             <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -91,18 +92,18 @@
               stroke="#545454" fill="none" />
           </g>
         </svg>
-      </div>
+            </div>
 
-      <!-- k4 -->
-      <div class="k4" onclick="clk('k4')">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o4' class="eikona">
+            <!-- k4 -->
+            <div class="k4" onclick="clk('k4')">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o4' class="eikona">
           <!-- O -->
           <g>
             <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
               fill="none" />
           </g>
         </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x4' class="eikona">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x4' class="eikona">
           <!-- X -->
           <g>
             <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -111,19 +112,19 @@
               stroke="#545454" fill="none" />
           </g>
         </svg>
-      </div>
+            </div>
 
-      <!-- k5 -->
+            <!-- k5 -->
 
-      <div class="k5" onclick="clk('k5')">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o5' class="eikona">
+            <div class="k5" onclick="clk('k5')">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o5' class="eikona">
           <!-- O -->
           <g>
             <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
               fill="none" />
           </g>
         </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x5' class="eikona">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x5' class="eikona">
           <!-- X -->
           <g>
             <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -132,18 +133,18 @@
               stroke="#545454" fill="none" />
           </g>
         </svg>
-      </div>
+            </div>
 
-      <!-- k6 -->
-      <div class="k6" onclick="clk('k6')">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o6' class="eikona">
+            <!-- k6 -->
+            <div class="k6" onclick="clk('k6')">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o6' class="eikona">
           <!-- O -->
           <g>
             <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
               fill="none" />
           </g>
         </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x6' class="eikona">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x6' class="eikona">
           <!-- X -->
           <g>
             <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -152,18 +153,18 @@
               stroke="#545454" fill="none" />
           </g>
         </svg>
-      </div>
+            </div>
 
-      <!-- k7 -->
-      <div class="k7" onclick="clk('k7')">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o7' class="eikona">
+            <!-- k7 -->
+            <div class="k7" onclick="clk('k7')">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o7' class="eikona">
           <!-- O -->
           <g>
             <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
               fill="none" />
           </g>
         </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x7' class="eikona">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x7' class="eikona">
           <!-- X -->
           <g>
             <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -172,19 +173,19 @@
               stroke="#545454" fill="none" />
           </g>
         </svg>
-      </div>
+            </div>
 
-      <!-- k8 -->
+            <!-- k8 -->
 
-      <div class="k8" onclick="clk('k8')">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o8' class="eikona">
+            <div class="k8" onclick="clk('k8')">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o8' class="eikona">
           <!-- O -->
           <g>
             <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
               fill="none" />
           </g>
         </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x8' class="eikona">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x8' class="eikona">
           <!-- X -->
           <g>
             <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -193,19 +194,19 @@
               stroke="#545454" fill="none" />
           </g>
         </svg>
-      </div>
+            </div>
 
-      <!-- k9 -->
+            <!-- k9 -->
 
-      <div class="k9" onclick="clk('k9')">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o9' class="eikona">
+            <div class="k9" onclick="clk('k9')">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o9' class="eikona">
           <!-- O -->
           <g>
             <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
               fill="none" />
           </g>
         </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x9' class="eikona">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x9' class="eikona">
           <!-- X -->
           <g>
             <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -214,29 +215,33 @@
               stroke="#545454" fill="none" />
           </g>
         </svg>
-      </div>
+            </div>
 
 
-      <!-- <div class="k9" onclick="clk('k9')"><object id="m9" type="image/svg+xml" class="eikona"></object></div> -->
+            <!-- <div class="k9" onclick="clk('k9')"><object id="m9" type="image/svg+xml" class="eikona"></object></div> -->
 
 
-    </div>
+        </div>
 
-    <!-- score table -->
-    <div class="score">
-      <table align="center" style="table-layout:auto; width: 80%;">
+        <!-- score table -->
+        <div class="score" style="">
+            <table style="margin: auto;width: 80%; ">
 
-        <tr>
-          <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o_score'
-              style="height: 50%; opacity:0%; ">
+                <tr>
+                    <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='o_score' style=" height: 10vmin;
+                      width: 10vmin;
+                      max-height: 100vmin;
+                      max-width: 100vmin; opacity:0% ">
               <!-- O -->
               <g>
                 <ellipse stroke="#f2ebd3" ry="46.491229" rx="46.491229" cy="50.00000" cx="50.000002" stroke-width="5"
                   fill="none" />
               </g>
             </svg></td>
-          <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x_score'
-              style=" height: 50%; opacity:0% ">
+                    <td><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id='x_score' style=" height: 10vmin;
+                      width: 10vmin;
+                      max-height: 100vmin;
+                      max-width: 100vmin; opacity:0% ">
               <!-- X -->
               <g>
                 <line stroke="#545454" y2="98" x2="97.5" y1="2" x1="2.5" fill-opacity="null" stroke-opacity="null"
@@ -245,15 +250,15 @@
                   stroke="#545454" fill="none" />
               </g>
             </svg></td>
-        </tr>
-        <tr>
-          <td id="o_wins">0</td>
-          <td id="x_wins">0</td>
+                </tr>
+                <tr>
+                    <td id="o_wins">0</td>
+                    <td id="x_wins">0</td>
 
-      </table>
+            </table>
+        </div>
     </div>
-  </div>
-  <button onclick="reset()">Reset</button>
+    <!-- 1<button onclick="reset()">Reset</button> -->
 
 
 
